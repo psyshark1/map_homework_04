@@ -13,9 +13,9 @@ Cylinder::Cylinder(const std::list<Point>& lp, const double& radius) : Circle(lp
 
 void Cylinder::set_param()
 {
-	auto p1 = *coords.begin();
-	auto p2 = *(++coords.begin());
-	height = std::pow(std::pow((p2.X - p1.X), 2) + std::pow((p2.Y - p1.Y), 2) + std::pow((p2.Z - p1.Z), 2), 0.5);
+	auto p1 = coords.begin();
+	auto p2 = ++coords.begin();
+	height = std::pow(std::pow((p2->X - p1->X), 2) + std::pow((p2->Y - p1->Y), 2) + std::pow((p2->Z - p1->Z), 2), 0.5);
 	square = 2 * pi * radius * (radius + height);
 	volume = pi * radius * radius * height;
 }
